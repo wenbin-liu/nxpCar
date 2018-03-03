@@ -1,0 +1,12 @@
+--cpu Cortex-M0+
+".\objects\nxpcar.o"
+".\objects\ics.o"
+".\objects\nvic.o"
+".\objects\uart.o"
+"D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Lib\ARM\arm_cortexM0l_math.lib"
+".\objects\startup_skeaz1284.o"
+".\objects\system_skeaz1284.o"
+--library_type=microlib --strict --scatter ".\Objects\nxpCar.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\nxpCar.map" -o .\Objects\nxpCar.axf
