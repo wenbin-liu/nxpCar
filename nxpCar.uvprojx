@@ -227,7 +227,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -427,24 +427,24 @@
           <GroupName>lib</GroupName>
           <Files>
             <File>
-              <FileName>KEA128_uart.c</FileName>
+              <FileName>ics.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drives\src\KEA128_uart.c</FilePath>
+              <FilePath>.\lib\src\ics.c</FilePath>
             </File>
             <File>
-              <FileName>common.c</FileName>
+              <FileName>nvic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drives\src\common.c</FilePath>
+              <FilePath>.\lib\src\nvic.c</FilePath>
             </File>
             <File>
-              <FileName>misc.c</FileName>
+              <FileName>uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drives\src\misc.c</FilePath>
+              <FilePath>.\lib\src\uart.c</FilePath>
             </File>
             <File>
-              <FileName>KEA128_port.c</FileName>
+              <FileName>i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drives\src\KEA128_port.c</FilePath>
+              <FilePath>.\lib\src\i2c.c</FilePath>
             </File>
           </Files>
         </Group>

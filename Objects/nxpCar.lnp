@@ -1,9 +1,11 @@
 --cpu Cortex-M0+
 ".\objects\nxpcar.o"
+".\objects\mpu6050.o"
 ".\objects\ics.o"
 ".\objects\nvic.o"
 ".\objects\uart.o"
-"D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Lib\ARM\arm_cortexM0l_math.lib"
+".\objects\i2c.o"
+"D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Lib\ARM\arm_cortexM0l_math.lib"
 ".\objects\startup_skeaz1284.o"
 ".\objects\system_skeaz1284.o"
 --library_type=microlib --strict --scatter ".\Objects\nxpCar.sct"

@@ -1,51 +1,81 @@
 Dependencies for Project 'nxpCar', Target 'Target 1': (DO NOT MODIFY !)
-F (.\user\src\nxpCar.c)(0x5A9A3EC2)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\nxpcar.o --omf_browse .\objects\nxpcar.crf --depend .\objects\nxpcar.d)
+F (.\user\src\nxpCar.c)(0x5A9A61C2)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\nxpcar.o --omf_browse .\objects\nxpcar.crf --depend .\objects\nxpcar.d)
 I (.\lib\inc\uart.h)(0x5A99F33B)
 I (.\lib\inc\derivative.h)(0x55B0529E)
 I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
 I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm0plus.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
 I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)
 I (.\lib\inc\nvic.h)(0x55B052C0)
 I (.\lib\inc\ics.h)(0x55B052C0)
+I (.\lib\inc\i2c.h)(0x5A9A58AF)
 I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AEF5F2)
-F (.\lib\src\ics.c)(0x5A99F3A7)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\ics.o --omf_browse .\objects\ics.crf --depend .\objects\ics.d)
+I (.\user\inc\mpu6050.h)(0x5A9A5CF8)
+F (.\user\src\mpu6050.c)(0x5A9A61AF)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\mpu6050.o --omf_browse .\objects\mpu6050.crf --depend .\objects\mpu6050.d)
+I (.\user\inc\mpu6050.h)(0x5A9A5CF8)
+I (.\lib\inc\derivative.h)(0x55B0529E)
+I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
+I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)
+I (.\lib\inc\i2c.h)(0x5A9A58AF)
+I (.\lib\inc\nvic.h)(0x55B052C0)
+F (.\lib\src\ics.c)(0x5A99F3A7)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\ics.o --omf_browse .\objects\ics.crf --depend .\objects\ics.d)
 I (.\lib\inc\ics.h)(0x55B052C0)
 I (.\lib\inc\derivative.h)(0x55B0529E)
 I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
 I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm0plus.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
 I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)
-F (.\lib\src\nvic.c)(0x55AE0198)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\nvic.o --omf_browse .\objects\nvic.crf --depend .\objects\nvic.d)
+F (.\lib\src\nvic.c)(0x55AE0198)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\nvic.o --omf_browse .\objects\nvic.crf --depend .\objects\nvic.d)
 I (.\lib\inc\nvic.h)(0x55B052C0)
 I (.\lib\inc\derivative.h)(0x55B0529E)
 I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
 I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm0plus.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
 I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)
-F (.\lib\src\uart.c)(0x5A99F33B)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+F (.\lib\src\uart.c)(0x5A99F33B)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
 I (.\lib\inc\uart.h)(0x5A99F33B)
 I (.\lib\inc\derivative.h)(0x55B0529E)
 I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
 I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm0plus.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
 I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)
 I (.\lib\inc\nvic.h)(0x55B052C0)
 I (.\lib\inc\ics.h)(0x55B052C0)
-F (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Lib\ARM\arm_cortexM0l_math.lib)(0x54235EDC)()
-F (RTE\Device\SKEAZ128xxx4\startup_SKEAZ1284.s)(0x5754CC5A)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "SKEAZ128xxx4 SETA 1"--list .\listings\startup_skeaz1284.lst --xref -o .\objects\startup_skeaz1284.o --depend .\objects\startup_skeaz1284.d)
-F (RTE\Device\SKEAZ128xxx4\system_SKEAZ1284.c)(0x5A9A3626)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\system_skeaz1284.o --omf_browse .\objects\system_skeaz1284.crf --depend .\objects\system_skeaz1284.d)
+F (.\lib\src\i2c.c)(0x5A9A5894)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (.\lib\inc\i2c.h)(0x5A9A58AF)
+I (.\lib\inc\derivative.h)(0x55B0529E)
+I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
+I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)
+I (.\lib\inc\nvic.h)(0x55B052C0)
+F (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Lib\ARM\arm_cortexM0l_math.lib)(0x5A601928)()
+F (RTE\Device\SKEAZ128xxx4\startup_SKEAZ1284.s)(0x5754CC5A)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "SKEAZ128xxx4 SETA 1"--list .\listings\startup_skeaz1284.lst --xref -o .\objects\startup_skeaz1284.o --depend .\objects\startup_skeaz1284.d)
+F (RTE\Device\SKEAZ128xxx4\system_SKEAZ1284.c)(0x5A9A3626)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\user\inc -I.\lib\inc -I.\drives\inc-I D:\nxp\nxpCar\RTE-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include"-I "D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include"-D__UVISION_VERSION="516" -D_RTE_ -DSKEAZ128xxx4-o .\objects\system_skeaz1284.o --omf_browse .\objects\system_skeaz1284.crf --depend .\objects\system_skeaz1284.d)
 I (D:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
 I (.\lib\inc\SKEAZ1284.h)(0x55B0529E)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm0plus.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
-I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0plus.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
 I (D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\Kinetis_KEAxx_DFP\1.3.0\Device\Include\system_SKEAZ1284.h)(0x5754CC5A)

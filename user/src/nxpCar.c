@@ -1,6 +1,8 @@
 #include "uart.h"
 #include "ics.h"
+#include "i2c.h"
 #include <stdio.h>
+#include "mpu6050.h"
 
 #define PRINTF_UART UART2
 
@@ -20,7 +22,7 @@ int main(void)
     	ICS_set.oscConfig.bEnable=1;	/* Osc enabled*/
     	ICS_set.oscConfig.bRange=1;		/* High frequency range 4-24 MHz*/
     	ICS_set.oscConfig.bIsCryst=1;	/* Oscillator clock source is selected*/
-    	ICS_set.oscConfig.u32OscFreq=16000 ; /* 8 MHz crystal, crytal is in KHz*/
+    	ICS_set.oscConfig.u32OscFreq=16000 ; /* 16 MHz crystal, crytal is in KHz*/
 
     	ICS_Init(&ICS_set);            		/*Initialization of core clock at 40MHz, bus clock 20 MHz*/
 
@@ -38,8 +40,20 @@ int main(void)
 
 		UART_Init(UART2,&UART_Config);			/*Initialization of UART utilities*/
 	
+		
+		MPU_Init();
+		
+		printf("MPU6050 is waking\r\n");
+		MPU_WakeUp();
+		printf("MPU6050 is working\r\n");
+		MPU_SetScale(GYRO_SCALE_500,ACC_SCALE_2G);
+		int16_t ax;
+		
+		
+		
 	while(1)
 	{
-		printf("Hello\r\n");
+		MPU_ReadAx(&ax);
+		printf("%d\r\n",ax);
 	}
 }

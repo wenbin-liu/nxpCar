@@ -7,7 +7,29 @@ Section Cross References
     nxpcar.o(i.fputc) refers to uart.o(i.UART_PutChar) for UART_PutChar
     nxpcar.o(i.main) refers to ics.o(i.ICS_Init) for ICS_Init
     nxpcar.o(i.main) refers to uart.o(i.UART_Init) for UART_Init
-    nxpcar.o(i.main) refers to printfb.o(i.__0printf$bare) for __2printf
+    nxpcar.o(i.main) refers to mpu6050.o(i.MPU_Init) for MPU_Init
+    nxpcar.o(i.main) refers to printf1.o(i.__0printf$1) for __2printf
+    nxpcar.o(i.main) refers to mpu6050.o(i.MPU_WakeUp) for MPU_WakeUp
+    nxpcar.o(i.main) refers to mpu6050.o(i.MPU_SetScale) for MPU_SetScale
+    nxpcar.o(i.main) refers to mpu6050.o(i.MPU_ReadAx) for MPU_ReadAx
+    mpu6050.o(i.I2C_Receive) refers to i2c.o(i.I2C_MasterReadWait) for I2C_MasterReadWait
+    mpu6050.o(i.I2C_Transmit) refers to i2c.o(i.I2C_MasterSendWait) for I2C_MasterSendWait
+    mpu6050.o(i.MPU_Init) refers to i2c.o(i.I2C_Init) for I2C_Init
+    mpu6050.o(i.MPU_ReadAx) refers to mpu6050.o(i.MPU_ReadReg16) for MPU_ReadReg16
+    mpu6050.o(i.MPU_ReadAy) refers to mpu6050.o(i.MPU_ReadReg16) for MPU_ReadReg16
+    mpu6050.o(i.MPU_ReadAz) refers to mpu6050.o(i.MPU_ReadReg16) for MPU_ReadReg16
+    mpu6050.o(i.MPU_ReadBytes) refers to mpu6050.o(i.I2C_Transmit) for I2C_Transmit
+    mpu6050.o(i.MPU_ReadBytes) refers to mpu6050.o(i.I2C_Receive) for I2C_Receive
+    mpu6050.o(i.MPU_ReadGx) refers to mpu6050.o(i.MPU_ReadReg16) for MPU_ReadReg16
+    mpu6050.o(i.MPU_ReadGy) refers to mpu6050.o(i.MPU_ReadReg16) for MPU_ReadReg16
+    mpu6050.o(i.MPU_ReadGz) refers to mpu6050.o(i.MPU_ReadReg16) for MPU_ReadReg16
+    mpu6050.o(i.MPU_ReadReg) refers to mpu6050.o(i.I2C_Transmit) for I2C_Transmit
+    mpu6050.o(i.MPU_ReadReg) refers to mpu6050.o(i.I2C_Receive) for I2C_Receive
+    mpu6050.o(i.MPU_ReadReg16) refers to mpu6050.o(i.MPU_ReadBytes) for MPU_ReadBytes
+    mpu6050.o(i.MPU_SetScale) refers to mpu6050.o(i.MPU_WriteReg) for MPU_WriteReg
+    mpu6050.o(i.MPU_WakeUp) refers to mpu6050.o(i.MPU_WriteReg) for MPU_WriteReg
+    mpu6050.o(i.MPU_WriteReg) refers to mpu6050.o(i.I2C_Transmit) for I2C_Transmit
+    mpu6050.o(i.MPU_isReady) refers to mpu6050.o(i.MPU_ReadReg) for MPU_ReadReg
     ics.o(i.FBE_to_FBI) refers to ics.o(i.OSC_Disable) for OSC_Disable
     ics.o(i.FBE_to_FBI) refers to ics.o(i.ICS_SetBusDivider) for ICS_SetBusDivider
     ics.o(i.FBE_to_FEE) refers to ics.o(i.ICS_SetBusDivider) for ICS_SetBusDivider
@@ -44,8 +66,47 @@ Section Cross References
     uart.o(i.UART_Init) refers to nvic.o(i.Enable_Interrupt) for Enable_Interrupt
     uart.o(i.UART_SetBaudrate) refers to uidiv.o(.text) for __aeabi_uidivmod
     uart.o(i.UART_SetCallback) refers to uart.o(.data) for UART_Callback
+    i2c.o(i.I2C0_IRQHandler) refers to i2c.o(.data) for I2C_Callback
+    i2c.o(i.I2C0_SetCallBack) refers to i2c.o(.data) for I2C_Callback
+    i2c.o(i.I2C1_IRQHandler) refers to i2c.o(.data) for I2C_Callback
+    i2c.o(i.I2C1_SetCallBack) refers to i2c.o(.data) for I2C_Callback
+    i2c.o(i.I2C_Init) refers to i2c.o(i.I2C_SetSlaveAddress) for I2C_SetSlaveAddress
+    i2c.o(i.I2C_Init) refers to i2c.o(i.I2C_SetSCLLowTimeout) for I2C_SetSCLLowTimeout
+    i2c.o(i.I2C_Init) refers to nvic.o(i.Enable_Interrupt) for Enable_Interrupt
+    i2c.o(i.I2C_IntDisable) refers to nvic.o(i.Disable_Interrupt) for Disable_Interrupt
+    i2c.o(i.I2C_IntEnable) refers to nvic.o(i.Enable_Interrupt) for Enable_Interrupt
+    i2c.o(i.I2C_MasterRead) refers to i2c.o(i.I2C_IntDisable) for I2C_IntDisable
+    i2c.o(i.I2C_MasterRead) refers to i2c.o(i.I2C_Start) for I2C_Start
+    i2c.o(i.I2C_MasterRead) refers to i2c.o(i.I2C_WriteOneByte) for I2C_WriteOneByte
+    i2c.o(i.I2C_MasterRead) refers to i2c.o(i.I2C_SendAck) for I2C_SendAck
+    i2c.o(i.I2C_MasterRead) refers to i2c.o(i.I2C_RxEnable) for I2C_RxEnable
+    i2c.o(i.I2C_MasterRead) refers to i2c.o(i.I2C_IntEnable) for I2C_IntEnable
+    i2c.o(i.I2C_MasterReadWait) refers to i2c.o(i.I2C_Start) for I2C_Start
+    i2c.o(i.I2C_MasterReadWait) refers to i2c.o(i.I2C_WriteOneByte) for I2C_WriteOneByte
+    i2c.o(i.I2C_MasterReadWait) refers to i2c.o(i.I2C_ReadOneByte) for I2C_ReadOneByte
+    i2c.o(i.I2C_MasterReadWait) refers to i2c.o(i.I2C_Stop) for I2C_Stop
+    i2c.o(i.I2C_MasterSend) refers to i2c.o(i.I2C_IsBusy) for I2C_IsBusy
+    i2c.o(i.I2C_MasterSend) refers to i2c.o(i.I2C_Start) for I2C_Start
+    i2c.o(i.I2C_MasterSend) refers to i2c.o(i.I2C_TxEnable) for I2C_TxEnable
+    i2c.o(i.I2C_MasterSend) refers to i2c.o(i.I2C_WriteOneByte) for I2C_WriteOneByte
+    i2c.o(i.I2C_MasterSendWait) refers to i2c.o(i.I2C_Start) for I2C_Start
+    i2c.o(i.I2C_MasterSendWait) refers to i2c.o(i.I2C_WriteOneByte) for I2C_WriteOneByte
+    i2c.o(i.I2C_MasterSendWait) refers to i2c.o(i.I2C_Stop) for I2C_Stop
+    i2c.o(i.I2C_ReadOneByte) refers to i2c.o(i.I2C_GetStatus) for I2C_GetStatus
+    i2c.o(i.I2C_ReadOneByte) refers to i2c.o(i.I2C_RxEnable) for I2C_RxEnable
+    i2c.o(i.I2C_ReadOneByte) refers to i2c.o(i.I2C_SendAck) for I2C_SendAck
+    i2c.o(i.I2C_ReadOneByte) refers to i2c.o(i.I2C_ClearStatus) for I2C_ClearStatus
+    i2c.o(i.I2C_RepeatStart) refers to i2c.o(i.I2C_IsBusy) for I2C_IsBusy
+    i2c.o(i.I2C_Start) refers to i2c.o(i.I2C_TxEnable) for I2C_TxEnable
+    i2c.o(i.I2C_Start) refers to i2c.o(i.I2C_IsBusy) for I2C_IsBusy
+    i2c.o(i.I2C_Stop) refers to i2c.o(i.I2C_IsBusy) for I2C_IsBusy
+    i2c.o(i.I2C_WriteOneByte) refers to i2c.o(i.I2C_GetStatus) for I2C_GetStatus
+    i2c.o(i.I2C_WriteOneByte) refers to i2c.o(i.I2C_TxEnable) for I2C_TxEnable
+    i2c.o(i.I2C_WriteOneByte) refers to i2c.o(i.I2C_ClearStatus) for I2C_ClearStatus
     startup_skeaz1284.o(RESET) refers to startup_skeaz1284.o(STACK) for __initial_sp
     startup_skeaz1284.o(RESET) refers to startup_skeaz1284.o(.text) for Reset_Handler
+    startup_skeaz1284.o(RESET) refers to i2c.o(i.I2C0_IRQHandler) for I2C0_IRQHandler
+    startup_skeaz1284.o(RESET) refers to i2c.o(i.I2C1_IRQHandler) for I2C1_IRQHandler
     startup_skeaz1284.o(RESET) refers to uart.o(i.UART0_IRQHandler) for UART0_IRQHandler
     startup_skeaz1284.o(RESET) refers to uart.o(i.UART1_IRQHandler) for UART1_IRQHandler
     startup_skeaz1284.o(RESET) refers to uart.o(i.UART2_IRQHandler) for UART2_IRQHandler
@@ -324,6 +385,15 @@ Removing Unused input sections from the image.
 
     Removing nxpcar.o(.rev16_text), (4 bytes).
     Removing nxpcar.o(.revsh_text), (4 bytes).
+    Removing mpu6050.o(.rev16_text), (4 bytes).
+    Removing mpu6050.o(.revsh_text), (4 bytes).
+    Removing mpu6050.o(i.MPU_ReadAy), (14 bytes).
+    Removing mpu6050.o(i.MPU_ReadAz), (14 bytes).
+    Removing mpu6050.o(i.MPU_ReadGx), (14 bytes).
+    Removing mpu6050.o(i.MPU_ReadGy), (14 bytes).
+    Removing mpu6050.o(i.MPU_ReadGz), (14 bytes).
+    Removing mpu6050.o(i.MPU_ReadReg), (44 bytes).
+    Removing mpu6050.o(i.MPU_isReady), (26 bytes).
     Removing ics.o(.rev16_text), (4 bytes).
     Removing ics.o(.revsh_text), (4 bytes).
     Removing ics.o(i.FBELP_to_FBE), (20 bytes).
@@ -344,7 +414,7 @@ Removing Unused input sections from the image.
     Removing ics.o(i.OSC_Disable), (20 bytes).
     Removing nvic.o(.rev16_text), (4 bytes).
     Removing nvic.o(.revsh_text), (4 bytes).
-    Removing nvic.o(i.Disable_Interrupt), (40 bytes).
+    Removing nvic.o(i.Disable_Interrupt), (80 bytes).
     Removing uart.o(.rev16_text), (4 bytes).
     Removing uart.o(.revsh_text), (4 bytes).
     Removing uart.o(i.UART_CheckFlag), (26 bytes).
@@ -357,6 +427,16 @@ Removing Unused input sections from the image.
     Removing uart.o(i.UART_SetCallback), (12 bytes).
     Removing uart.o(i.UART_WaitTxComplete), (16 bytes).
     Removing uart.o(.bss), (60 bytes).
+    Removing i2c.o(.rev16_text), (4 bytes).
+    Removing i2c.o(.revsh_text), (4 bytes).
+    Removing i2c.o(i.I2C0_SetCallBack), (12 bytes).
+    Removing i2c.o(i.I2C1_SetCallBack), (12 bytes).
+    Removing i2c.o(i.I2C_Deinit), (52 bytes).
+    Removing i2c.o(i.I2C_IntDisable), (48 bytes).
+    Removing i2c.o(i.I2C_IntEnable), (48 bytes).
+    Removing i2c.o(i.I2C_MasterRead), (76 bytes).
+    Removing i2c.o(i.I2C_MasterSend), (56 bytes).
+    Removing i2c.o(i.I2C_RepeatStart), (60 bytes).
     Removing startup_skeaz1284.o(HEAP), (0 bytes).
     Removing system_skeaz1284.o(.rev16_text), (4 bytes).
     Removing system_skeaz1284.o(.revsh_text), (4 bytes).
@@ -370,7 +450,7 @@ Removing Unused input sections from the image.
     Removing depilogue.o(.text), (190 bytes).
     Removing depilogue.o(i.__ARM_clz), (46 bytes).
 
-47 unused section(s) (total 2854 bytes) removed from the image.
+66 unused section(s) (total 3414 bytes) removed from the image.
 
 ==============================================================================
 
@@ -385,31 +465,32 @@ Image Symbol Table
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
@@ -424,13 +505,17 @@ Image Symbol Table
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    lib\\src\\i2c.c                          0x00000000   Number         0  i2c.o ABSOLUTE
     lib\\src\\ics.c                          0x00000000   Number         0  ics.o ABSOLUTE
     lib\\src\\nvic.c                         0x00000000   Number         0  nvic.o ABSOLUTE
     lib\\src\\uart.c                         0x00000000   Number         0  uart.o ABSOLUTE
+    lib\src\i2c.c                            0x00000000   Number         0  i2c.o ABSOLUTE
     lib\src\ics.c                            0x00000000   Number         0  ics.o ABSOLUTE
     lib\src\nvic.c                           0x00000000   Number         0  nvic.o ABSOLUTE
     lib\src\uart.c                           0x00000000   Number         0  uart.o ABSOLUTE
+    user\\src\\mpu6050.c                     0x00000000   Number         0  mpu6050.o ABSOLUTE
     user\\src\\nxpCar.c                      0x00000000   Number         0  nxpcar.o ABSOLUTE
+    user\src\mpu6050.c                       0x00000000   Number         0  mpu6050.o ABSOLUTE
     user\src\nxpCar.c                        0x00000000   Number         0  nxpcar.o ABSOLUTE
     .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
     .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
@@ -446,35 +531,69 @@ Image Symbol Table
     .text                                    0x000000fc   Section        0  uidiv.o(.text)
     .text                                    0x00000128   Section       36  init.o(.text)
     i.Enable_Interrupt                       0x0000014c   Section        0  nvic.o(i.Enable_Interrupt)
-    i.FEI_factory_to_FEI_custom              0x00000178   Section        0  ics.o(i.FEI_factory_to_FEI_custom)
-    i.FEI_to_FBE                             0x000001d0   Section        0  ics.o(i.FEI_to_FBE)
-    i.FEI_to_FBI                             0x00000248   Section        0  ics.o(i.FEI_to_FBI)
-    i.FEI_to_FEE                             0x000002a0   Section        0  ics.o(i.FEI_to_FEE)
-    i.ICS_Init                               0x00000304   Section        0  ics.o(i.ICS_Init)
-    i.ICS_SetBusDivider                      0x00000384   Section        0  ics.o(i.ICS_SetBusDivider)
-    ICS_SetBusDivider                        0x00000385   Thumb Code    22  ics.o(i.ICS_SetBusDivider)
-    i.UART0_IRQHandler                       0x000003a0   Section        0  uart.o(i.UART0_IRQHandler)
-    i.UART1_IRQHandler                       0x000003b4   Section        0  uart.o(i.UART1_IRQHandler)
-    i.UART2_IRQHandler                       0x000003c8   Section        0  uart.o(i.UART2_IRQHandler)
-    i.UART_PutChar                           0x000003dc   Section        0  uart.o(i.UART_PutChar)
-    i.__0printf$bare                         0x000003ec   Section        0  printfb.o(i.__0printf$bare)
+    i.FEI_factory_to_FEI_custom              0x00000180   Section        0  ics.o(i.FEI_factory_to_FEI_custom)
+    i.FEI_to_FBE                             0x000001d8   Section        0  ics.o(i.FEI_to_FBE)
+    i.FEI_to_FBI                             0x00000250   Section        0  ics.o(i.FEI_to_FBI)
+    i.FEI_to_FEE                             0x000002a8   Section        0  ics.o(i.FEI_to_FEE)
+    i.I2C0_IRQHandler                        0x0000030c   Section        0  i2c.o(i.I2C0_IRQHandler)
+    i.I2C1_IRQHandler                        0x00000324   Section        0  i2c.o(i.I2C1_IRQHandler)
+    i.I2C_ClearStatus                        0x0000033c   Section        0  i2c.o(i.I2C_ClearStatus)
+    I2C_ClearStatus                          0x0000033d   Thumb Code     8  i2c.o(i.I2C_ClearStatus)
+    i.I2C_GetStatus                          0x00000344   Section        0  i2c.o(i.I2C_GetStatus)
+    I2C_GetStatus                            0x00000345   Thumb Code     6  i2c.o(i.I2C_GetStatus)
+    i.I2C_IsBusy                             0x0000034a   Section        0  i2c.o(i.I2C_IsBusy)
+    I2C_IsBusy                               0x0000034b   Thumb Code    10  i2c.o(i.I2C_IsBusy)
+    i.I2C_MasterReadWait                     0x00000354   Section        0  i2c.o(i.I2C_MasterReadWait)
+    i.I2C_Receive                            0x000003bc   Section        0  mpu6050.o(i.I2C_Receive)
+    i.I2C_RxEnable                           0x000003d4   Section        0  i2c.o(i.I2C_RxEnable)
+    I2C_RxEnable                             0x000003d5   Thumb Code    10  i2c.o(i.I2C_RxEnable)
+    i.I2C_SendAck                            0x000003de   Section        0  i2c.o(i.I2C_SendAck)
+    I2C_SendAck                              0x000003df   Thumb Code    10  i2c.o(i.I2C_SendAck)
+    i.I2C_SetSCLLowTimeout                   0x000003e8   Section        0  i2c.o(i.I2C_SetSCLLowTimeout)
+    i.I2C_TxEnable                           0x000003f0   Section        0  i2c.o(i.I2C_TxEnable)
+    I2C_TxEnable                             0x000003f1   Thumb Code    10  i2c.o(i.I2C_TxEnable)
+    i.__scatterload_null                     0x000003fa   Section        2  handlers.o(i.__scatterload_null)
     .ARM.__at_0x400                          0x00000400   Section       16  startup_skeaz1284.o(.ARM.__at_0x400)
-    i.ICS_SetOscDivider                      0x00000410   Section        0  ics.o(i.ICS_SetOscDivider)
-    i.OSC_Init                               0x000004a4   Section        0  ics.o(i.OSC_Init)
-    i.SystemInit                             0x00000510   Section        0  system_skeaz1284.o(i.SystemInit)
-    i.UART_Init                              0x00000580   Section        0  uart.o(i.UART_Init)
-    i.__scatterload_copy                     0x000006a8   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x000006b6   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x000006b8   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x000006c6   Section        0  printfb.o(i._printf_core)
-    _printf_core                             0x000006c7   Thumb Code    30  printfb.o(i._printf_core)
-    i.fputc                                  0x000006e4   Section        0  nxpcar.o(i.fputc)
-    i.main                                   0x000006fc   Section        0  nxpcar.o(i.main)
+    i.I2C_Init                               0x00000410   Section        0  i2c.o(i.I2C_Init)
+    i.I2C_MasterSendWait                     0x00000530   Section        0  i2c.o(i.I2C_MasterSendWait)
+    i.I2C_ReadOneByte                        0x0000057c   Section        0  i2c.o(i.I2C_ReadOneByte)
+    i.I2C_SetSlaveAddress                    0x0000060c   Section        0  i2c.o(i.I2C_SetSlaveAddress)
+    i.I2C_Start                              0x00000624   Section        0  i2c.o(i.I2C_Start)
+    i.I2C_Stop                               0x00000660   Section        0  i2c.o(i.I2C_Stop)
+    i.I2C_Transmit                           0x00000698   Section        0  mpu6050.o(i.I2C_Transmit)
+    i.I2C_WriteOneByte                       0x000006b0   Section        0  i2c.o(i.I2C_WriteOneByte)
+    i.ICS_Init                               0x00000738   Section        0  ics.o(i.ICS_Init)
+    i.ICS_SetBusDivider                      0x000007b8   Section        0  ics.o(i.ICS_SetBusDivider)
+    ICS_SetBusDivider                        0x000007b9   Thumb Code    22  ics.o(i.ICS_SetBusDivider)
+    i.ICS_SetOscDivider                      0x000007d4   Section        0  ics.o(i.ICS_SetOscDivider)
+    i.MPU_Init                               0x00000868   Section        0  mpu6050.o(i.MPU_Init)
+    i.MPU_ReadAx                             0x000008b0   Section        0  mpu6050.o(i.MPU_ReadAx)
+    i.MPU_ReadBytes                          0x000008c0   Section        0  mpu6050.o(i.MPU_ReadBytes)
+    i.MPU_ReadReg16                          0x000008f0   Section        0  mpu6050.o(i.MPU_ReadReg16)
+    i.MPU_SetScale                           0x0000090c   Section        0  mpu6050.o(i.MPU_SetScale)
+    i.MPU_WakeUp                             0x00000924   Section        0  mpu6050.o(i.MPU_WakeUp)
+    i.MPU_WriteReg                           0x00000930   Section        0  mpu6050.o(i.MPU_WriteReg)
+    i.OSC_Init                               0x00000954   Section        0  ics.o(i.OSC_Init)
+    i.SystemInit                             0x000009c0   Section        0  system_skeaz1284.o(i.SystemInit)
+    i.UART0_IRQHandler                       0x00000a30   Section        0  uart.o(i.UART0_IRQHandler)
+    i.UART1_IRQHandler                       0x00000a44   Section        0  uart.o(i.UART1_IRQHandler)
+    i.UART2_IRQHandler                       0x00000a58   Section        0  uart.o(i.UART2_IRQHandler)
+    i.UART_Init                              0x00000a6c   Section        0  uart.o(i.UART_Init)
+    i.UART_PutChar                           0x00000b94   Section        0  uart.o(i.UART_PutChar)
+    i.__0printf$1                            0x00000ba4   Section        0  printf1.o(i.__0printf$1)
+    i.__scatterload_copy                     0x00000bc4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_zeroinit                 0x00000bd2   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00000be0   Section        0  printf1.o(i._printf_core)
+    _printf_core                             0x00000be1   Thumb Code   332  printf1.o(i._printf_core)
+    i.fputc                                  0x00000d30   Section        0  nxpcar.o(i.fputc)
+    i.main                                   0x00000d48   Section        0  nxpcar.o(i.main)
     .data                                    0x1ffff000   Section       20  uart.o(.data)
     gu16UART_TxBuffPos                       0x1ffff004   Data           6  uart.o(.data)
     gu16UART_RxBuffPos                       0x1ffff00a   Data           6  uart.o(.data)
-    .data                                    0x1ffff014   Section        4  stdout.o(.data)
-    STACK                                    0x1ffff018   Section      256  startup_skeaz1284.o(STACK)
+    .data                                    0x1ffff014   Section        8  i2c.o(.data)
+    I2C_Callback                             0x1ffff014   Data           8  i2c.o(.data)
+    .data                                    0x1ffff01c   Section        4  stdout.o(.data)
+    STACK                                    0x1ffff020   Section      256  startup_skeaz1284.o(STACK)
 
     Global Symbols
 
@@ -483,6 +602,47 @@ Image Symbol Table
     BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __ARM_use_no_argv                        0x00000000   Number         0  nxpcar.o ABSOLUTE
     __Vectors                                0x00000000   Data           4  startup_skeaz1284.o(RESET)
+    _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_c                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_charcount                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_d                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_e                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_f                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_dec                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_hex                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_g                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_i                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_int_dec                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_l                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ll                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lld                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lli                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llo                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llu                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llx                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_dec                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_hex                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_oct                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ls                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_mbtowc                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_n                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_o                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_p                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_percent                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_pre_padding                      0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_s                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_str                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_signed                  0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_unsigned                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_u                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wctomb                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_x                                0x00000000   Number         0  stubs.o ABSOLUTE
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
     __cxa_finalize                            - Undefined Weak Reference
     __decompress                              - Undefined Weak Reference
@@ -514,8 +674,6 @@ Image Symbol Table
     FTM1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
     FTM2_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
     FTMRE_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
-    I2C0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
-    I2C1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
     ICS_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
     IRQ_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
     KBI0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
@@ -540,35 +698,55 @@ Image Symbol Table
     __aeabi_uidivmod                         0x000000fd   Thumb Code    44  uidiv.o(.text)
     __scatterload                            0x00000129   Thumb Code    28  init.o(.text)
     __scatterload_rt2                        0x00000129   Thumb Code     0  init.o(.text)
-    Enable_Interrupt                         0x0000014d   Thumb Code    34  nvic.o(i.Enable_Interrupt)
-    FEI_factory_to_FEI_custom                0x00000179   Thumb Code    78  ics.o(i.FEI_factory_to_FEI_custom)
-    FEI_to_FBE                               0x000001d1   Thumb Code   112  ics.o(i.FEI_to_FBE)
-    FEI_to_FBI                               0x00000249   Thumb Code    80  ics.o(i.FEI_to_FBI)
-    FEI_to_FEE                               0x000002a1   Thumb Code    90  ics.o(i.FEI_to_FEE)
-    ICS_Init                                 0x00000305   Thumb Code   118  ics.o(i.ICS_Init)
-    UART0_IRQHandler                         0x000003a1   Thumb Code    12  uart.o(i.UART0_IRQHandler)
-    UART1_IRQHandler                         0x000003b5   Thumb Code    12  uart.o(i.UART1_IRQHandler)
-    UART2_IRQHandler                         0x000003c9   Thumb Code    12  uart.o(i.UART2_IRQHandler)
-    UART_PutChar                             0x000003dd   Thumb Code    16  uart.o(i.UART_PutChar)
-    __0printf$bare                           0x000003ed   Thumb Code    12  printfb.o(i.__0printf$bare)
-    __1printf$bare                           0x000003ed   Thumb Code     0  printfb.o(i.__0printf$bare)
-    __2printf                                0x000003ed   Thumb Code     0  printfb.o(i.__0printf$bare)
-    ICS_SetOscDivider                        0x00000411   Thumb Code   136  ics.o(i.ICS_SetOscDivider)
-    OSC_Init                                 0x000004a5   Thumb Code   102  ics.o(i.OSC_Init)
-    SystemInit                               0x00000511   Thumb Code    90  system_skeaz1284.o(i.SystemInit)
-    UART_Init                                0x00000581   Thumb Code   278  uart.o(i.UART_Init)
-    __scatterload_copy                       0x000006a9   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x000006b7   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x000006b9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    fputc                                    0x000006e5   Thumb Code    18  nxpcar.o(i.fputc)
-    main                                     0x000006fd   Thumb Code   156  nxpcar.o(i.main)
-    Region$$Table$$Base                      0x000007a8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000007c8   Number         0  anon$$obj.o(Region$$Table)
+    Enable_Interrupt                         0x0000014d   Thumb Code    42  nvic.o(i.Enable_Interrupt)
+    FEI_factory_to_FEI_custom                0x00000181   Thumb Code    78  ics.o(i.FEI_factory_to_FEI_custom)
+    FEI_to_FBE                               0x000001d9   Thumb Code   112  ics.o(i.FEI_to_FBE)
+    FEI_to_FBI                               0x00000251   Thumb Code    80  ics.o(i.FEI_to_FBI)
+    FEI_to_FEE                               0x000002a9   Thumb Code    90  ics.o(i.FEI_to_FEE)
+    I2C0_IRQHandler                          0x0000030d   Thumb Code    18  i2c.o(i.I2C0_IRQHandler)
+    I2C1_IRQHandler                          0x00000325   Thumb Code    18  i2c.o(i.I2C1_IRQHandler)
+    I2C_MasterReadWait                       0x00000355   Thumb Code   104  i2c.o(i.I2C_MasterReadWait)
+    I2C_Receive                              0x000003bd   Thumb Code    24  mpu6050.o(i.I2C_Receive)
+    I2C_SetSCLLowTimeout                     0x000003e9   Thumb Code     8  i2c.o(i.I2C_SetSCLLowTimeout)
+    __scatterload_null                       0x000003fb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    I2C_Init                                 0x00000411   Thumb Code   274  i2c.o(i.I2C_Init)
+    I2C_MasterSendWait                       0x00000531   Thumb Code    74  i2c.o(i.I2C_MasterSendWait)
+    I2C_ReadOneByte                          0x0000057d   Thumb Code   138  i2c.o(i.I2C_ReadOneByte)
+    I2C_SetSlaveAddress                      0x0000060d   Thumb Code    22  i2c.o(i.I2C_SetSlaveAddress)
+    I2C_Start                                0x00000625   Thumb Code    56  i2c.o(i.I2C_Start)
+    I2C_Stop                                 0x00000661   Thumb Code    50  i2c.o(i.I2C_Stop)
+    I2C_Transmit                             0x00000699   Thumb Code    24  mpu6050.o(i.I2C_Transmit)
+    I2C_WriteOneByte                         0x000006b1   Thumb Code   130  i2c.o(i.I2C_WriteOneByte)
+    ICS_Init                                 0x00000739   Thumb Code   118  ics.o(i.ICS_Init)
+    ICS_SetOscDivider                        0x000007d5   Thumb Code   136  ics.o(i.ICS_SetOscDivider)
+    MPU_Init                                 0x00000869   Thumb Code    66  mpu6050.o(i.MPU_Init)
+    MPU_ReadAx                               0x000008b1   Thumb Code    14  mpu6050.o(i.MPU_ReadAx)
+    MPU_ReadBytes                            0x000008c1   Thumb Code    44  mpu6050.o(i.MPU_ReadBytes)
+    MPU_ReadReg16                            0x000008f1   Thumb Code    28  mpu6050.o(i.MPU_ReadReg16)
+    MPU_SetScale                             0x0000090d   Thumb Code    24  mpu6050.o(i.MPU_SetScale)
+    MPU_WakeUp                               0x00000925   Thumb Code    12  mpu6050.o(i.MPU_WakeUp)
+    MPU_WriteReg                             0x00000931   Thumb Code    30  mpu6050.o(i.MPU_WriteReg)
+    OSC_Init                                 0x00000955   Thumb Code   102  ics.o(i.OSC_Init)
+    SystemInit                               0x000009c1   Thumb Code    90  system_skeaz1284.o(i.SystemInit)
+    UART0_IRQHandler                         0x00000a31   Thumb Code    12  uart.o(i.UART0_IRQHandler)
+    UART1_IRQHandler                         0x00000a45   Thumb Code    12  uart.o(i.UART1_IRQHandler)
+    UART2_IRQHandler                         0x00000a59   Thumb Code    12  uart.o(i.UART2_IRQHandler)
+    UART_Init                                0x00000a6d   Thumb Code   278  uart.o(i.UART_Init)
+    UART_PutChar                             0x00000b95   Thumb Code    16  uart.o(i.UART_PutChar)
+    __0printf$1                              0x00000ba5   Thumb Code    24  printf1.o(i.__0printf$1)
+    __1printf$1                              0x00000ba5   Thumb Code     0  printf1.o(i.__0printf$1)
+    __2printf                                0x00000ba5   Thumb Code     0  printf1.o(i.__0printf$1)
+    __scatterload_copy                       0x00000bc5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_zeroinit                   0x00000bd3   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    fputc                                    0x00000d31   Thumb Code    18  nxpcar.o(i.fputc)
+    main                                     0x00000d49   Thumb Code   198  nxpcar.o(i.main)
+    Region$$Table$$Base                      0x00000e4c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000e6c   Number         0  anon$$obj.o(Region$$Table)
     global_pass_count                        0x1ffff000   Data           2  uart.o(.data)
     global_fail_count                        0x1ffff002   Data           2  uart.o(.data)
     UART_Callback                            0x1ffff010   Data           4  uart.o(.data)
-    __stdout                                 0x1ffff014   Data           4  stdout.o(.data)
-    __initial_sp                             0x1ffff118   Data           0  startup_skeaz1284.o(STACK)
+    __stdout                                 0x1ffff01c   Data           4  stdout.o(.data)
+    __initial_sp                             0x1ffff120   Data           0  startup_skeaz1284.o(STACK)
 
 
 
@@ -578,58 +756,89 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000007e0, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000e8c, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000007c8, Max: 0x00020000, ABSOLUTE)
-
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x000000c0   Data   RO          369    RESET               startup_skeaz1284.o
-    0x000000c0   0x00000000   Code   RO          409  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x000000c0   0x00000004   Code   RO          674    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x000000c4   0x00000004   Code   RO          677    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x000000c8   0x00000000   Code   RO          679    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x000000c8   0x00000000   Code   RO          681    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x000000c8   0x00000008   Code   RO          682    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x000000d0   0x00000000   Code   RO          684    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
-    0x000000d0   0x00000000   Code   RO          686    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
-    0x000000d0   0x00000004   Code   RO          675    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
-    0x000000d4   0x00000028   Code   RO          371    .text               startup_skeaz1284.o
-    0x000000fc   0x0000002c   Code   RO          412    .text               mc_p.l(uidiv.o)
-    0x00000128   0x00000024   Code   RO          702    .text               mc_p.l(init.o)
-    0x0000014c   0x0000002c   Code   RO          230    i.Enable_Interrupt  nvic.o
-    0x00000178   0x00000058   Code   RO           80    i.FEI_factory_to_FEI_custom  ics.o
-    0x000001d0   0x00000078   Code   RO           81    i.FEI_to_FBE        ics.o
-    0x00000248   0x00000058   Code   RO           82    i.FEI_to_FBI        ics.o
-    0x000002a0   0x00000064   Code   RO           83    i.FEI_to_FEE        ics.o
-    0x00000304   0x00000080   Code   RO           84    i.ICS_Init          ics.o
-    0x00000384   0x0000001c   Code   RO           85    i.ICS_SetBusDivider  ics.o
-    0x000003a0   0x00000014   Code   RO          261    i.UART0_IRQHandler  uart.o
-    0x000003b4   0x00000014   Code   RO          262    i.UART1_IRQHandler  uart.o
-    0x000003c8   0x00000014   Code   RO          263    i.UART2_IRQHandler  uart.o
-    0x000003dc   0x00000010   Code   RO          269    i.UART_PutChar      uart.o
-    0x000003ec   0x00000014   Code   RO          415    i.__0printf$bare    mc_p.l(printfb.o)
-    0x00000400   0x00000010   Code   RO          370    .ARM.__at_0x400     startup_skeaz1284.o
-    0x00000410   0x00000094   Code   RO           86    i.ICS_SetOscDivider  ics.o
-    0x000004a4   0x0000006c   Code   RO           90    i.OSC_Init          ics.o
-    0x00000510   0x00000070   Code   RO          380    i.SystemInit        system_skeaz1284.o
-    0x00000580   0x00000128   Code   RO          268    i.UART_Init         uart.o
-    0x000006a8   0x0000000e   Code   RO          716    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x000006b6   0x00000002   Code   RO          717    i.__scatterload_null  mc_p.l(handlers.o)
-    0x000006b8   0x0000000e   Code   RO          718    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x000006c6   0x0000001e   Code   RO          422    i._printf_core      mc_p.l(printfb.o)
-    0x000006e4   0x00000018   Code   RO            3    i.fputc             nxpcar.o
-    0x000006fc   0x000000ac   Code   RO            4    i.main              nxpcar.o
-    0x000007a8   0x00000020   Data   RO          714    Region$$Table       anon$$obj.o
-
-
-    Execution Region RW_IRAM1 (Base: 0x1ffff000, Size: 0x00000118, Max: 0x00004000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00000e6c, Max: 0x00020000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x1ffff000   0x00000014   Data   RW          276    .data               uart.o
-    0x1ffff014   0x00000004   Data   RW          688    .data               mc_p.l(stdout.o)
-    0x1ffff018   0x00000100   Zero   RW          367    STACK               startup_skeaz1284.o
+    0x00000000   0x000000c0   Data   RO          654    RESET               startup_skeaz1284.o
+    0x000000c0   0x00000000   Code   RO          694  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c0   0x00000004   Code   RO          960    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c4   0x00000004   Code   RO          963    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c8   0x00000000   Code   RO          965    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c8   0x00000000   Code   RO          967    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c8   0x00000008   Code   RO          968    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d0   0x00000000   Code   RO          970    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d0   0x00000000   Code   RO          972    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d0   0x00000004   Code   RO          961    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d4   0x00000028   Code   RO          656    .text               startup_skeaz1284.o
+    0x000000fc   0x0000002c   Code   RO          697    .text               mc_p.l(uidiv.o)
+    0x00000128   0x00000024   Code   RO          988    .text               mc_p.l(init.o)
+    0x0000014c   0x00000034   Code   RO          352    i.Enable_Interrupt  nvic.o
+    0x00000180   0x00000058   Code   RO          202    i.FEI_factory_to_FEI_custom  ics.o
+    0x000001d8   0x00000078   Code   RO          203    i.FEI_to_FBE        ics.o
+    0x00000250   0x00000058   Code   RO          204    i.FEI_to_FBI        ics.o
+    0x000002a8   0x00000064   Code   RO          205    i.FEI_to_FEE        ics.o
+    0x0000030c   0x00000018   Code   RO          491    i.I2C0_IRQHandler   i2c.o
+    0x00000324   0x00000018   Code   RO          493    i.I2C1_IRQHandler   i2c.o
+    0x0000033c   0x00000008   Code   RO          495    i.I2C_ClearStatus   i2c.o
+    0x00000344   0x00000006   Code   RO          497    i.I2C_GetStatus     i2c.o
+    0x0000034a   0x0000000a   Code   RO          501    i.I2C_IsBusy        i2c.o
+    0x00000354   0x00000068   Code   RO          503    i.I2C_MasterReadWait  i2c.o
+    0x000003bc   0x00000018   Code   RO           76    i.I2C_Receive       mpu6050.o
+    0x000003d4   0x0000000a   Code   RO          508    i.I2C_RxEnable      i2c.o
+    0x000003de   0x0000000a   Code   RO          509    i.I2C_SendAck       i2c.o
+    0x000003e8   0x00000008   Code   RO          510    i.I2C_SetSCLLowTimeout  i2c.o
+    0x000003f0   0x0000000a   Code   RO          514    i.I2C_TxEnable      i2c.o
+    0x000003fa   0x00000002   Code   RO         1003    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000003fc   0x00000004   PAD
+    0x00000400   0x00000010   Code   RO          655    .ARM.__at_0x400     startup_skeaz1284.o
+    0x00000410   0x00000120   Code   RO          498    i.I2C_Init          i2c.o
+    0x00000530   0x0000004a   Code   RO          505    i.I2C_MasterSendWait  i2c.o
+    0x0000057a   0x00000002   PAD
+    0x0000057c   0x00000090   Code   RO          506    i.I2C_ReadOneByte   i2c.o
+    0x0000060c   0x00000016   Code   RO          511    i.I2C_SetSlaveAddress  i2c.o
+    0x00000622   0x00000002   PAD
+    0x00000624   0x0000003c   Code   RO          512    i.I2C_Start         i2c.o
+    0x00000660   0x00000038   Code   RO          513    i.I2C_Stop          i2c.o
+    0x00000698   0x00000018   Code   RO           77    i.I2C_Transmit      mpu6050.o
+    0x000006b0   0x00000088   Code   RO          515    i.I2C_WriteOneByte  i2c.o
+    0x00000738   0x00000080   Code   RO          206    i.ICS_Init          ics.o
+    0x000007b8   0x0000001c   Code   RO          207    i.ICS_SetBusDivider  ics.o
+    0x000007d4   0x00000094   Code   RO          208    i.ICS_SetOscDivider  ics.o
+    0x00000868   0x00000048   Code   RO           78    i.MPU_Init          mpu6050.o
+    0x000008b0   0x0000000e   Code   RO           79    i.MPU_ReadAx        mpu6050.o
+    0x000008be   0x00000002   PAD
+    0x000008c0   0x00000030   Code   RO           82    i.MPU_ReadBytes     mpu6050.o
+    0x000008f0   0x0000001c   Code   RO           87    i.MPU_ReadReg16     mpu6050.o
+    0x0000090c   0x00000018   Code   RO           88    i.MPU_SetScale      mpu6050.o
+    0x00000924   0x0000000c   Code   RO           89    i.MPU_WakeUp        mpu6050.o
+    0x00000930   0x00000024   Code   RO           90    i.MPU_WriteReg      mpu6050.o
+    0x00000954   0x0000006c   Code   RO          212    i.OSC_Init          ics.o
+    0x000009c0   0x00000070   Code   RO          665    i.SystemInit        system_skeaz1284.o
+    0x00000a30   0x00000014   Code   RO          383    i.UART0_IRQHandler  uart.o
+    0x00000a44   0x00000014   Code   RO          384    i.UART1_IRQHandler  uart.o
+    0x00000a58   0x00000014   Code   RO          385    i.UART2_IRQHandler  uart.o
+    0x00000a6c   0x00000128   Code   RO          390    i.UART_Init         uart.o
+    0x00000b94   0x00000010   Code   RO          391    i.UART_PutChar      uart.o
+    0x00000ba4   0x00000020   Code   RO          744    i.__0printf$1       mc_p.l(printf1.o)
+    0x00000bc4   0x0000000e   Code   RO         1002    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00000bd2   0x0000000e   Code   RO         1004    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00000be0   0x00000150   Code   RO          751    i._printf_core      mc_p.l(printf1.o)
+    0x00000d30   0x00000018   Code   RO            3    i.fputc             nxpcar.o
+    0x00000d48   0x00000104   Code   RO            4    i.main              nxpcar.o
+    0x00000e4c   0x00000020   Data   RO         1000    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x1ffff000, Size: 0x00000120, Max: 0x00004000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1ffff000   0x00000014   Data   RW          398    .data               uart.o
+    0x1ffff014   0x00000008   Data   RW          516    .data               i2c.o
+    0x1ffff01c   0x00000004   Data   RW          974    .data               mc_p.l(stdout.o)
+    0x1ffff020   0x00000100   Zero   RW          652    STACK               startup_skeaz1284.o
 
 
 ==============================================================================
@@ -639,17 +848,19 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
+       994         48          0          8          0      11490   i2c.o
        808         70          0          0          0       5105   ics.o
-        44         10          0          0          0       6975   nvic.o
-       196         22          0          0          0     116731   nxpcar.o
+       282         16          0          0          0       4668   mpu6050.o
+        52         10          0          0          0       7943   nvic.o
+       284         68          0          0          0     119875   nxpcar.o
         56         30        192          0        256        808   startup_skeaz1284.o
        112         22          0          0          0        445   system_skeaz1284.o
        372         42          0         20          0       6384   uart.o
 
     ----------------------------------------------------------------------
-      1588        196        224         20        256     136448   Object Totals
+      2966        306        224         28        256     156718   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          0          0          0   (incl. Padding)
+         6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -665,22 +876,22 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
-        50          8          0          0          0        144   printfb.o
+       368         12          0          0          0        168   printf1.o
          0          0          0          4          0          0   stdout.o
         44          0          0          0          0         72   uidiv.o
 
     ----------------------------------------------------------------------
-       180         24          0          4          0        284   Library Totals
-         0          0          0          0          0          0   (incl. Padding)
+       502         28          0          4          0        308   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-       180         24          0          4          0        284   mc_p.l
+       498         28          0          4          0        308   mc_p.l
 
     ----------------------------------------------------------------------
-       180         24          0          4          0        284   Library Totals
+       502         28          0          4          0        308   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -689,15 +900,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1768        220        224         24        256     136180   Grand Totals
-      1768        220        224         24        256     136180   ELF Image Totals
-      1768        220        224         24          0          0   ROM Totals
+      3468        334        224         32        256     155330   Grand Totals
+      3468        334        224         32        256     155330   ELF Image Totals
+      3468        334        224         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1992 (   1.95kB)
-    Total RW  Size (RW Data + ZI Data)               280 (   0.27kB)
-    Total ROM Size (Code + RO Data + RW Data)       2016 (   1.97kB)
+    Total RO  Size (Code + RO Data)                 3692 (   3.61kB)
+    Total RW  Size (RW Data + ZI Data)               288 (   0.28kB)
+    Total ROM Size (Code + RO Data + RW Data)       3724 (   3.64kB)
 
 ==============================================================================
 
