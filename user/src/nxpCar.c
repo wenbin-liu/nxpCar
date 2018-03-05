@@ -17,6 +17,10 @@ int fputc(int c,FILE *fp)
 
 void systickInit(void)
 {
+	/* SysTick配置
+	40Mhz时钟源
+	5ms中断中期
+	 */
 	SysTick->LOAD=200000;
 	SysTick->CTRL=SysTick_CTRL_CLKSOURCE_Msk|SysTick_CTRL_TICKINT_Msk|SysTick_CTRL_ENABLE_Msk;
 	Enable_Interrupt(SysTick_IRQn);
@@ -34,6 +38,12 @@ void SysTick_Handler(void)
 
 void icsInit(void)
 {
+	/*
+	时钟配置
+	16Mhz晶振
+	40Mhz内核始终
+	20Mhz总线时钟
+	*/
 	    /* Perform processor initialization */
     	ICS_ConfigType ICS_set={0};		/* Declaration of ICS_setup structure */
     	ICS_set.u8ClkMode=ICS_CLK_MODE_FEE; /* ICS in FLL engaged internal mode*/
@@ -49,7 +59,11 @@ void icsInit(void)
 
 void uartInit(void)
 {
-			UART_ConfigType UART_Config={{0}};
+	/* UART2 引脚
+	Tx -> PTD7
+	Rx -> PTD6
+	 */
+		UART_ConfigType UART_Config={{0}};
 
 		UART_Config.sctrl1settings.bits.bM=0;  	/* 8 bit mode*/
 		UART_Config.sctrl1settings.bits.bPe=0;	/* No hardware parity generation or checking*/
@@ -64,8 +78,16 @@ void uartInit(void)
 
 void pwmFtmInit(void)
 {
-	
+	/*
+	四个通道引脚配置如下
+	 PS0 -> PTH0
+	 PS1 -> PTH1
+	 PS2 -> PTD0
+	 PS3 -> PTD1
+	 */
 	SIM->PINSEL1|=SIM_PINSEL1_FTM2PS0(1)|SIM_PINSEL1_FTM2PS1(1)|SIM_PINSEL1_FTM2PS2(1)|SIM_PINSEL1_FTM2PS3(1);
+
+	
 	
 	FTM_ConfigType FTM2_Config={0};
 	FTM_ChParamsType FTM2CH_Config={0};

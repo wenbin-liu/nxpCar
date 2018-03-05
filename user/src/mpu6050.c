@@ -3,8 +3,12 @@
 
 void MPU_Init()
 {
-		I2C_ConfigType  I2C_Config = {{0}};
-		I2C_Config.u16Slt = 0;
+    /* 引脚配置
+    SCL -> PTA3
+    SDA -> PTA2
+     */
+    I2C_ConfigType  I2C_Config = {{0}};
+	I2C_Config.u16Slt = 0;
   	I2C_Config.u16F = 0x10; /* Baud rate at 400 kbit/sec, MULT = 0 , ICR=10*/
     I2C_Config.sSetting.bIntEn = 0;
     I2C_Config.sSetting.bI2CEn = 1;
@@ -14,7 +18,7 @@ void MPU_Init()
 		
 }
 
-
+//stop变量无用
 void I2C_Transmit(I2C_MemMapPtr I2Cx,uint8_t addr,uint8_t *buff,uint8_t size,uint8_t stop)
 {
 	I2C_MasterSendWait(I2Cx,addr,buff,size);
@@ -28,14 +32,12 @@ void I2C_Receive(I2C_MemMapPtr I2Cx,uint8_t addr,uint8_t *buff,uint8_t size,uint
 
 void MPU_WriteReg(uint8_t regAddr,uint8_t data)
 {
- //   I2C_ByteWrite(data,regAddr);
     uint8_t buffer[2]={regAddr,data};
     I2C_Transmit(I2C0,MPU_ADDR,buffer,2,1);
 }
 
 void MPU_ReadReg(uint8_t regAddr,uint8_t *data)
 {
- //   I2C_BufferRead(I2C1,data,regAddr,1);
     I2C_Transmit(I2C0,MPU_ADDR,&regAddr,1,0);
     I2C_Receive(I2C0,MPU_ADDR,data,1,1);
 }
