@@ -3,19 +3,38 @@
 #include "i2c.h"
 #include <stdio.h>
 #include "mpu6050.h"
+#include "ftm.h"
 
 #define PRINTF_UART UART2
 
+uint32_t count=0;
 int fputc(int c,FILE *fp)
 {
 	UART_PutChar(PRINTF_UART,c);
 	return c;
 }
 
-int main(void)
+
+void systickInit(void)
 {
-	
-    /* Perform processor initialization */
+	SysTick->LOAD=200000;
+	SysTick->CTRL=SysTick_CTRL_CLKSOURCE_Msk|SysTick_CTRL_TICKINT_Msk|SysTick_CTRL_ENABLE_Msk;
+	Enable_Interrupt(SysTick_IRQn);
+}
+
+void SysTick_Handler(void)
+{
+	int16_t ax;
+	MPU_ReadAx(&ax);
+	printf("%d %d\r\n",ax,count);
+	if(count%100==0)
+			GPIOA->PTOR=1<<10;
+	count++;
+}
+
+void icsInit(void)
+{
+	    /* Perform processor initialization */
     	ICS_ConfigType ICS_set={0};		/* Declaration of ICS_setup structure */
     	ICS_set.u8ClkMode=ICS_CLK_MODE_FEE; /* ICS in FLL engaged internal mode*/
     	ICS_set.bdiv=0;					/* bdiv bit equals 0, prescaler=1*/
@@ -26,9 +45,11 @@ int main(void)
 
     	ICS_Init(&ICS_set);            		/*Initialization of core clock at 40MHz, bus clock 20 MHz*/
 
+}
 
-
-		UART_ConfigType UART_Config={{0}};
+void uartInit(void)
+{
+			UART_ConfigType UART_Config={{0}};
 
 		UART_Config.sctrl1settings.bits.bM=0;  	/* 8 bit mode*/
 		UART_Config.sctrl1settings.bits.bPe=0;	/* No hardware parity generation or checking*/
@@ -38,8 +59,47 @@ int main(void)
 		UART_Config.u32SysClkHz = 20000000;   	/* Bus clock in Hz*/
 		UART_Config.u32Baudrate = 115200;     	/* UART baud rate */
 
-		UART_Init(UART2,&UART_Config);			/*Initialization of UART utilities*/
+		UART_Init(PRINTF_UART,&UART_Config);			/*Initialization of UART utilities*/
+}
+
+void pwmFtmInit(void)
+{
 	
+	SIM->PINSEL1|=SIM_PINSEL1_FTM2PS0(1)|SIM_PINSEL1_FTM2PS1(1)|SIM_PINSEL1_FTM2PS2(1)|SIM_PINSEL1_FTM2PS3(1);
+	
+	FTM_ConfigType FTM2_Config={0};
+	FTM_ChParamsType FTM2CH_Config={0};
+
+	FTM2_Config.modulo=999;
+	FTM2_Config.clk_source=FTM_CLOCK_SYSTEMCLOCK;
+	FTM2_Config.prescaler=FTM_CLOCK_PS_DIV1;
+	FTM2_Config.mode=1;
+	FTM2_Config.toie=0;
+
+
+	FTM2CH_Config.ctrl.bits.bMode=FTM_PWMMODE_EDGEALLIGNED;
+	FTM2CH_Config.ctrl.bits.bPWMPol=FTM_PWM_HIGHTRUEPULSE;
+	FTM2CH_Config.u16CnV=0;
+
+
+	FTM_ChannelInit(FTM2,0,FTM2CH_Config);
+	FTM_ChannelInit(FTM2,1,FTM2CH_Config);
+	FTM_ChannelInit(FTM2,2,FTM2CH_Config);
+	FTM_ChannelInit(FTM2,3,FTM2CH_Config);
+	
+	FTM_Init(FTM2,&FTM2_Config);
+}
+
+
+
+int main(void)
+{
+	
+
+
+		icsInit();
+	
+		uartInit();
 		
 		MPU_Init();
 		
@@ -47,13 +107,17 @@ int main(void)
 		MPU_WakeUp();
 		printf("MPU6050 is working\r\n");
 		MPU_SetScale(GYRO_SCALE_500,ACC_SCALE_2G);
-		int16_t ax;
+
+		pwmFtmInit();
+	
+		FTM_SetChannelValue(FTM2,3,333);
+		systickInit();
 		
-		
+		GPIOA->PDDR=1<<10;
 		
 	while(1)
 	{
-		MPU_ReadAx(&ax);
-		printf("%d\r\n",ax);
+
+
 	}
 }

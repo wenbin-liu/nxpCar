@@ -21,3 +21,6 @@
 .\objects\nxpcar.o: .\user\inc\mpu6050.h
 .\objects\nxpcar.o: .\lib\inc\derivative.h
 .\objects\nxpcar.o: .\lib\inc\SKEAZ1284.h
+.\objects\nxpcar.o: .\lib\inc\ftm.h
+.\objects\nxpcar.o: .\lib\inc\derivative.h
+.\objects\nxpcar.o: .\lib\inc\SKEAZ1284.h
