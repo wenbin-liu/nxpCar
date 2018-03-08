@@ -38,6 +38,7 @@ class MainWindow(datascope_ui.Ui_MainWindow,QtWidgets.QMainWindow):
             self.com=serial.Serial(port=port,baudrate=baudrate)
             if self.com.isOpen()==True:
                 self.connectButton.setText("断开")
+                self.connectButton.clicked.disconnect(self.slotConnect)
                 self.connectButton.clicked.connect(self.slotDisconnect)
             self.com.timeout=0
             self.timer.start(30)
@@ -48,6 +49,7 @@ class MainWindow(datascope_ui.Ui_MainWindow,QtWidgets.QMainWindow):
         self.timer.stop()
         self.com.close()
         self.connectButton.setText("连接")
+        self.connectButton.clicked.disconnect(self.slotDisconnect)
         self.connectButton.clicked.connect(self.slotConnect)
 
     def update(self):

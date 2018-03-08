@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "mpu6050.h"
 #include "ftm.h"
+#include "adc.h"
 
 #define PRINTF_UART UART2
 
@@ -28,9 +29,14 @@ void systickInit(void)
 
 void SysTick_Handler(void)
 {
-	int16_t ax;
-	MPU_ReadAx(&ax);
-	printf("%d %d\r\n",ax,count);
+//	int16_t ax;
+//	MPU_ReadAx(&ax);
+//	printf("%d %d\r\n",ax,count);
+//	
+	if(ADC_IsFIFOFullFlag(ADC)!=0)
+		printf("%d %d %d\r\n",ADC_ReadResultReg(ADC),ADC_ReadResultReg(ADC),ADC_ReadResultReg(ADC));
+
+	
 	if(count%100==0)
 			GPIOA->PTOR=1<<10;
 	count++;
@@ -112,7 +118,29 @@ void pwmFtmInit(void)
 	FTM_Init(FTM2,&FTM2_Config);
 }
 
+void adcInit(void)
+{
+	/* ADC 引脚分配
+	AD2(原理图上的AD11) -> PTA6
+	AD12 -> PTF4
+	AD13 -> PTF5
+	AD14 -> PTF6
+	AD15 -> PTF7
+	
+	*/
+	  ADC_ConfigType  ADC_Config={{0}};
 
+    /* Initialization of ADC module */
+    ADC_Config.u8ClockDiv = ADC_ADIV_DIVIDE_1;
+    ADC_Config.u8ClockSource = CLOCK_SOURCE_BUS_CLOCK;
+    ADC_Config.u8Mode = ADC_MODE_12BIT;
+    ADC_Config.sSetting.bIntEn = 0;
+		ADC_Config.sSetting.bContinuousEn=1;
+    ADC_Config.u8FiFoLevel = ADC_FIFO_LEVEL3;
+    ADC_Config.u16PinControl= 0xF<<12; /* Disable I/O control on ADC channel 10*/
+
+    ADC_Init(ADC, &ADC_Config);
+}
 
 int main(void)
 {
@@ -123,20 +151,23 @@ int main(void)
 	
 		uartInit();
 		
-		MPU_Init();
-		
-		printf("MPU6050 is waking\r\n");
-		MPU_WakeUp();
-		printf("MPU6050 is working\r\n");
-		MPU_SetScale(GYRO_SCALE_500,ACC_SCALE_2G);
+//		MPU_Init();
+//		
+//		printf("MPU6050 is waking\r\n");
+//		MPU_WakeUp();
+//		printf("MPU6050 is working\r\n");
+//		MPU_SetScale(GYRO_SCALE_500,ACC_SCALE_2G);
 
 		pwmFtmInit();
 	
 		FTM_SetChannelValue(FTM2,3,333);
+		adcInit();
 		systickInit();
 		
 		GPIOA->PDDR=1<<10;
-		
+		ADC_SetChannel(ADC,ADC_CHANNEL_AD12);
+		ADC_SetChannel(ADC,ADC_CHANNEL_AD13);
+		ADC_SetChannel(ADC,ADC_CHANNEL_AD14);
 	while(1)
 	{
 

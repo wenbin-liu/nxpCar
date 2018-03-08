@@ -24,3 +24,6 @@
 .\objects\nxpcar.o: .\lib\inc\ftm.h
 .\objects\nxpcar.o: .\lib\inc\derivative.h
 .\objects\nxpcar.o: .\lib\inc\SKEAZ1284.h
+.\objects\nxpcar.o: .\lib\inc\adc.h
+.\objects\nxpcar.o: .\lib\inc\derivative.h
+.\objects\nxpcar.o: .\lib\inc\SKEAZ1284.h
